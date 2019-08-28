@@ -16,8 +16,7 @@ class SimpleApp : Application(), HasActivityInjector {
     override fun onCreate() {
         super.onCreate()
 
-        DaggerAppComponent
-            .builder()
+        DaggerAppComponent.builder()
             .application(this)
             .build()
             .inject(this)
