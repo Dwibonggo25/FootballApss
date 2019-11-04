@@ -3,12 +3,13 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/navigation"
-            app:startDestination="@id/splashScreenFragment">
+            app:startDestination="@id/loginFragment">
 
     <fragment android:id="@+id/loginFragment"
-              android:name="com.example.simplelogin.ui.LoginFragment"
+              android:name="com.example.footballapps.ui.login.LoginFragment"
               android:label="fragment_login"
               tools:layout="@layout/fragment_login"/>
-    <fragment android:id="@+id/splashScreenFragment" android:name="com.example.simplelogin.ui.splashscreen.SplashScreenFragment"
+    <fragment android:id="@+id/splashScreenFragment"
+            android:name="com.example.footballapps.ui.splashscreen.SplashScreenFragment"
               android:label="fragment_splash_screen" tools:layout="@layout/fragment_splash_screen"/>
 </navigation>

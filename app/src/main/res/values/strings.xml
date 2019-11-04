@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleLogin</string>
+    <string name="app_name">FootballApps</string>
 
     <string name="login">Login</string>
     <string name="forgot_password">Forgot Password?</string>

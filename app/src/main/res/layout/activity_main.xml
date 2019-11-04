@@ -8,19 +8,10 @@
         <import type="android.view.View"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            tools:context=".ui.main.MainActivity"
+    <androidx.drawerlayout.widget.DrawerLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/mainToolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-        </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
         <fragment
                 android:id="@+id/main_nav_fragment"
@@ -29,6 +20,6 @@
                 android:layout_height="match_parent"
                 app:navGraph="@navigation/navigation"
                 app:defaultNavHost="true"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>

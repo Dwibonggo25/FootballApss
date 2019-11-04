@@ -3,8 +3,8 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="fragment" type="com.example.simplelogin.ui.splashscreen.SplashScreenFragment"/>
-        <variable name="vm" type="com.example.simplelogin.ui.splashscreen.SplashScreenViewmodel"/>
+        <variable name="fragment" type="com.example.footballapps.ui.splashscreen.SplashScreenFragment"/>
+        <variable name="vm" type="com.example.footballapps.ui.splashscreen.SplashScreenViewmodel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"

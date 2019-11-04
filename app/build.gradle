@@ -15,7 +15,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         multiDexEnabled true
-        applicationId "com.example.simplelogin"
+        applicationId "com.example.footballapps"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -40,9 +40,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-beta01'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha03'
+
+    //Material button
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.material:material:1.1.0-alpha09'
 
     //Setting room database
     implementation "androidx.room:room-runtime:$persistence_component_version"
@@ -78,4 +81,3 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.0.0-rc02'
 
 }
-
