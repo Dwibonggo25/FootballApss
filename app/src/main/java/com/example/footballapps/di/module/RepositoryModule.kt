@@ -3,6 +3,7 @@ package com.example.footballapps.di.module
 import com.example.footballapps.AppDatabase
 import com.example.footballapps.api.ApiService
 import com.example.footballapps.db.UserDao
+import com.example.footballapps.repository.HomeRepository
 import com.example.footballapps.repository.LoginRepository
 import dagger.Module
 import dagger.Provides
@@ -19,5 +20,7 @@ class RepositoryModule {
     @Singleton
     fun providesLoginRepository (userDao: UserDao, apiService: ApiService): LoginRepository = LoginRepository (userDao, apiService)
 
-
+    @Provides
+    @Singleton
+    fun providesHomeRepository (userDao: UserDao, apiService: ApiService)= HomeRepository (userDao, apiService)
 }

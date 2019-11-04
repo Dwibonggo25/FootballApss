@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.footballapps.ui.login.LoginViewModel
 import com.example.footballapps.di.ViewModelFactory
 import com.example.footballapps.di.ViewModelKey
+import com.example.footballapps.ui.home.HomeViewmodel
 import com.example.footballapps.ui.splashscreen.SplashScreenViewmodel
 import dagger.Binds
 import dagger.Module
@@ -25,5 +26,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SplashScreenViewmodel::class)
     internal abstract fun providesSplashScreenViewmodel(viewModel : SplashScreenViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HomeViewmodel::class)
+    internal abstract fun providesSplashHomeViewmodel(viewModel : HomeViewmodel) : ViewModel
 
 }
