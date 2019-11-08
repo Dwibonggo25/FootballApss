@@ -3,37 +3,22 @@ package com.example.footballapps.repository
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
 import com.example.footballapps.api.ApiService
-import com.example.footballapps.db.UserDao
+import com.example.footballapps.db.dao.AllSportsDao
+import com.example.footballapps.db.entity.AllSportsLocal
+import com.example.footballapps.model.AllSport
+import com.example.footballapps.model.Result
 import java.io.IOException
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val userDao: UserDao, private val api: ApiService) {
+class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService) {
 
-    fun fetchAllSports() = liveData {
-        val disposable = emitSource(
-            userDao.fetchAllLeague().map{
-
-            }
-        )
-
-        try {
-            val data = api.fetchAllSports()
-
-            disposable.dispose()
-
-            //Save in local
-
-            emitSource(
-                userDao.fetchAllLeague().map {
-
-                }
-            )
-        }catch (exection: IOException){
-            emitSource(
-                userDao.fetchAllLeague().map {
-
-                }
-            )
-        }
-    }
+    suspend fun loadAllLeague () = api.fetchAllSports()
 }
+//emit(allStartsDao.fetchAllLeague())
+//
+//val sport = mutableListOf<AllSportsLocal>()
+//val data = api.fetchAllSports()
+//for (i in data.sports){
+//    sport.add(AllSportsLocal(i.idSport, i.strSport, i.strFormat, i.strSportThumb, i.strSportDescription))
+//}
+//allStartsDao.insetInAllSports(sport)

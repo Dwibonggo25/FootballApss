@@ -2,14 +2,19 @@ package com.example.footballapps.di.module
 
 import android.app.Application
 import com.example.footballapps.BASE_URL
+import com.example.footballapps.ResultWrapper
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.withContext
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.HttpException
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.io.IOException
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -62,4 +67,5 @@ class NetworkModule {
             .client(okHttpClient)
             .build()
     }
+
 }

@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import com.example.footballapps.databinding.ActivityMainBinding
 import com.example.footballapps.ui.login.LoginViewModel
-import com.example.simplelogin.databinding.ActivityMainBinding
 import dagger.android.AndroidInjection
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
