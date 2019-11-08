@@ -10,6 +10,7 @@ buildscript {
         dagger_version = '2.16'
         retrofit_version = '2.6.0'
         retrofit_logging_interceptor_version = '3.9.1'
+        glide_version = '4.8.0'
     }
 
     repositories {
