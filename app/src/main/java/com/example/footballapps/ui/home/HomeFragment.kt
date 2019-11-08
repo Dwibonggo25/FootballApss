@@ -12,6 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.example.footballapps.R
 import com.example.footballapps.databinding.FragmentHomeBinding
 import dagger.android.support.AndroidSupportInjection
@@ -27,6 +30,10 @@ class HomeFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    private lateinit var adapter: HomeRecyclerAdpater
+
+    private lateinit var viewPager: ViewPager
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         viewModel= ViewModelProviders.of(this, viewModelFactory).get(HomeViewmodel::class.java)
@@ -41,13 +48,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        lifecycleScope.launch {
 
-        }
-
+        initRecyclerView()
         viewModel.user.observe(this, Observer {
-
+            adapter.refresh(it.sports)
         })
+    }
+
+    private fun initRecyclerView() {
+        viewPager = binding.viewPagerBanner
+        adapter = HomeRecyclerAdpater(ArrayList(), activity!!)
+        viewPager.adapter = adapter
+
     }
 
     override fun onAttach(context: Context) {
