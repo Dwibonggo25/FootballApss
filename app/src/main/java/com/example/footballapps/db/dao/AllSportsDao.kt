@@ -15,5 +15,5 @@ interface AllSportsDao {
     fun insetInAllSports (sports: List<AllSportsLocal>)
 
     @Query("SELECT * from all_sports")
-    fun fetchAllLeague(): LiveData<AllSportsLocal>
+    fun fetchAllLeague(): LiveData<List<AllSportsLocal>>
 }

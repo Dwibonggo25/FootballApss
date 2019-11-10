@@ -19,7 +19,6 @@ class HomeViewmodel @Inject constructor(private var api: HomeRepository) : ViewM
 
     private val userId : LiveData<AllSport> = MutableLiveData ()
 
-
     var user = liveData (Dispatchers.IO) {
         emit(api.loadAllLeague())
     }
