@@ -2,19 +2,15 @@ package com.example.footballapps.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
-import androidx.lifecycle.map
-import com.example.footballapps.NetworkBoundResource
+import com.example.footballapps.utils.NetworkBoundResource
 import com.example.footballapps.Resource
 import com.example.footballapps.api.ApiService
 import com.example.footballapps.db.dao.AllSportsDao
 import com.example.footballapps.db.entity.AllSportsLocal
-import com.example.footballapps.model.AllSport
 import com.example.footballapps.model.AllSportResponse
-import com.example.footballapps.model.Result
-import java.io.IOException
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService) {
+class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService): BaseRep {
 
     suspend fun loadAllLeague () = api.fetchAllSports()
 
@@ -22,8 +18,8 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
         emitSource(allStartsDao.fetchAllLeague())
     }
 
-    fun getAllSports () : LiveData<kotlin.Result<AllSportsLocal> > {
-        return object : NetworkBoundResource <List<AllSportsLocal>, AllSportResponse>(){
+    fun getAllSports () : LiveData<Resource<AllSportsLocal> > {
+        return object : NetworkBoundResource<List<AllSportsLocal>, AllSportResponse>(){
             override fun saveCallRsult(item: AllSportResponse) {
                 allStartsDao.insetInAllSports(item)
             }
