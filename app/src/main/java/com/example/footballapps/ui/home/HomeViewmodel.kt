@@ -1,14 +1,9 @@
 package com.example.footballapps.ui.home
 
-import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.*
-import com.example.footballapps.db.entity.AllSportsLocal
-import com.example.footballapps.model.AllSport
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.footballapps.repository.HomeRepository
-import com.example.footballapps.repository.LoginRepository
-import kotlinx.coroutines.Dispatchers
-import retrofit2.HttpException
 import javax.inject.Inject
 
 class HomeViewmodel @Inject constructor(private var api: HomeRepository) : ViewModel() {
@@ -17,9 +12,14 @@ class HomeViewmodel @Inject constructor(private var api: HomeRepository) : ViewM
 //        emit(api.loadAllLeague())
 //    }
 
-    private val userId : LiveData<AllSport> = MutableLiveData ()
+    private val movieId = MutableLiveData<Long>()
 
-    var user = liveData (Dispatchers.IO) {
-        emit(api.loadAllLeague())
+
+    val sports = liveData {
+        emit(api.getAllSports())
+    }
+
+    fun initData(movieId: Long) {
+        this.movieId.value = 2
     }
 }

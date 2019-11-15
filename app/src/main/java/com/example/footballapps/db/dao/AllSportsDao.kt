@@ -1,12 +1,8 @@
 package com.example.footballapps.db.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.footballapps.db.entity.AllSportsLocal
-import com.example.footballapps.model.AllSport
 
 @Dao
 interface AllSportsDao {
@@ -15,5 +11,6 @@ interface AllSportsDao {
     fun insetInAllSports (sports: List<AllSportsLocal>)
 
     @Query("SELECT * from all_sports")
-    fun fetchAllLeague(): LiveData<List<AllSportsLocal>>
+    suspend fun fetchAllLeague(): List<AllSportsLocal>
+
 }

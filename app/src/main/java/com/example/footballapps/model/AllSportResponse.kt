@@ -1,13 +1,8 @@
 package com.example.footballapps.model
 
+import com.example.footballapps.db.entity.AllSportsLocal
+
 data class AllSportResponse(
-    val sports: List<AllSport>
+    val sports: List<AllSportsLocal>
 )
 
-data class AllSport(
-    val idSport: String,
-    val strFormat: String,
-    val strSport: String,
-    val strSportDescription: String,
-    val strSportThumb: String
-)

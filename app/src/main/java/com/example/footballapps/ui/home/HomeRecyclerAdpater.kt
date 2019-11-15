@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.example.footballapps.R
-import com.example.footballapps.model.AllSport
+import com.example.footballapps.db.entity.AllSportsLocal
 
-class HomeRecyclerAdpater (var league : List<AllSport> , val context: Context) : PagerAdapter() {
+class HomeRecyclerAdpater (var league : List<AllSportsLocal> , val context: Context) : PagerAdapter() {
 
     override fun isViewFromObject(view: View, obj: Any): Boolean {
         return view == obj
@@ -41,7 +41,7 @@ class HomeRecyclerAdpater (var league : List<AllSport> , val context: Context) :
         return view
     }
 
-    fun refresh (league: List<AllSport>){
+    fun refresh (league: List<AllSportsLocal>){
         this.league = league
         notifyDataSetChanged()
     }

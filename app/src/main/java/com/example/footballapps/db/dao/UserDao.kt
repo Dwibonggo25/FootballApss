@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import com.example.footballapps.db.entity.User
-import com.example.footballapps.model.AllSport
 
 @Dao
 interface UserDao {
