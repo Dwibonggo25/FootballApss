@@ -55,9 +55,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
         }
     }
 
-    fun asLivedata() : LiveData<Result<ResultType?>> {
-        return result
-    }
+    fun asLivedata() = result as LiveData<Result<ResultType?>>
 
     @WorkerThread
     protected abstract fun processResponse(response: RequestType): ResultType

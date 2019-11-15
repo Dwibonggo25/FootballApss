@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.example.footballapps.R
 import com.example.footballapps.databinding.FragmentHomeBinding
+import com.example.footballapps.vo.Result
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -45,8 +46,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
-        viewModel.sports.observe(this, Observer {
-
+        viewModel.sports.observe(this, Observer {data->
+            data?.let {
+                when (it.value!!.status){
+                    Result.Status.SUCCESS -> {
+                        adapter.refresh(it.value!!.data!!)
+                    }
+                }
+            }
         })
     }
 

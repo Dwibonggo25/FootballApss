@@ -8,12 +8,7 @@ import javax.inject.Inject
 
 class HomeViewmodel @Inject constructor(private var api: HomeRepository) : ViewModel() {
 
-//    val user = liveData {
-//        emit(api.loadAllLeague())
-//    }
-
     private val movieId = MutableLiveData<Long>()
-
 
     val sports = liveData {
         emit(api.getAllSports())

@@ -49,11 +49,3 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
         }
     }
 }
-//emit(allStartsDao.fetchAllLeague())
-//
-//val sport = mutableListOf<AllSportsLocal>()
-//val data = api.fetchAllSports()
-//for (i in data.sports){
-//    sport.add(AllSportsLocal(i.idSport, i.strSport, i.strFormat, i.strSportThumb, i.strSportDescription))
-//}
-//allStartsDao.insetInAllSports(sport)
