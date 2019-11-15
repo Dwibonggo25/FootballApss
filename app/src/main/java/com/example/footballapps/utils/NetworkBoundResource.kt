@@ -4,13 +4,9 @@ import android.util.Log
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.footballapps.ResultWrapper
-import com.example.footballapps.vo.ApiSuccessResponse
 import com.example.footballapps.vo.Result
 import kotlinx.coroutines.*
-import java.lang.Exception
 import kotlin.coroutines.coroutineContext
 
 // ResultType: Type for the Resource data.
@@ -20,17 +16,20 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private val result = MutableLiveData<Result<ResultType?>>()
 
+    private val supervisorJob = SupervisorJob()
+
     suspend fun build(): NetworkBoundResource<ResultType, RequestType> {
         withContext(Dispatchers.Main) {
-            result.value = Result.loading()
+            result.value = Result.loading(null)
         }
-        CoroutineScope(coroutineContext).launch {
+        CoroutineScope(coroutineContext).launch (supervisorJob) {
             val dbResource = loadFromDb()
             if (shouldFetch(dbResource)){
                 try {
                     fetchFromNetwork(dbResource)
                 }catch (e: Exception){
-                     Log.e("Eroor", "$e")
+                    Log.e("NetworkBoundResource", "An error happened: $e")
+                    setValue(Result.error("$e", loadFromDb()))
                 }
             }else {
                 Log.d(NetworkBoundResource::class.java.name, "Return data from local database")
@@ -43,7 +42,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     private suspend fun fetchFromNetwork(dbSource: ResultType) {
         Log.d(NetworkBoundResource::class.java.name, "Fetch data from network")
         setValue(Result.loading(dbSource)) // Dispatch latest value quickly (UX purpose)
-        val apiResponse = createCall().await()
+        val apiResponse = createCall()
         Log.e(NetworkBoundResource::class.java.name, "Data fetched from network")
         saveCallResult(processResponse(apiResponse))
         setValue(Result.success(dbSource))
@@ -52,7 +51,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     @MainThread
     private fun setValue(newValue: Result<ResultType?>) {
         if (result.value != newValue) {
-            result.value = newValue
+            result.postValue(newValue)
         }
     }
 
@@ -78,12 +77,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
     // Called to create the API call.
     @MainThread
-    abstract fun createCall(): Deferred <RequestType>
-
-    // Called when the fetch fails. The child class may want to reset components
-    // like rate limiter.
-    protected open fun onFetchFailed() {}
-
+    abstract suspend fun createCall(): RequestType
 
 
 }

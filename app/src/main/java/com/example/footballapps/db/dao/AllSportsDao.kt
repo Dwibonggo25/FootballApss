@@ -8,7 +8,7 @@ import com.example.footballapps.db.entity.AllSportsLocal
 interface AllSportsDao {
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
-    fun insetInAllSports (sports: List<AllSportsLocal>)
+    suspend fun insetInAllSports (sports: List<AllSportsLocal>)
 
     @Query("SELECT * from all_sports")
     suspend fun fetchAllLeague(): List<AllSportsLocal>
