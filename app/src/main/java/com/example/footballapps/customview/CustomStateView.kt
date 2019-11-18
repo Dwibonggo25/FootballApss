@@ -36,7 +36,6 @@ class CustomStateView : ConstraintLayout {
 
     private fun init(set: AttributeSet?) {
 
-
         if (set == null) {
             return
         }
@@ -53,14 +52,34 @@ class CustomStateView : ConstraintLayout {
         tvMessage = view.findViewById(R.id.tvMessage)
         tvTryAgain = view.findViewById(R.id.tvTryAgain)
         progres = view.findViewById(R.id.progressBar)
+
+        tvTryAgain.setOnClickListener {
+            isClickable = true
+        }
+
         showLoading()
     }
 
-    private fun hideLoading () {
+    fun hideLoading () {
         progres.visibility = View.GONE
     }
 
-    private fun showLoading () {
-        progres.visibility = View.VISIBLE
+    fun showLoading () {
+        tvTryAgain.visibility = View.VISIBLE
+        progres.visibility = View.GONE
+        tvMessage.visibility = View.VISIBLE
+    }
+
+    fun showErrorMessage () {
+        tvTryAgain.visibility = View.VISIBLE
+        progres.visibility = View.GONE
+        tvMessage.visibility = View.VISIBLE
+    }
+
+    override fun performClick(): Boolean {
+        if (super.performClick()) return true
+
+        invalidate()
+        return true
     }
 }

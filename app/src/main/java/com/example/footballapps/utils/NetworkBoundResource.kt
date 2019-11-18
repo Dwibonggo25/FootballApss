@@ -5,8 +5,10 @@ import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.liveData
 import com.example.footballapps.vo.Result
 import kotlinx.coroutines.*
+import androidx.lifecycle.map
 import kotlin.coroutines.coroutineContext
 
 // ResultType: Type for the Resource data.
@@ -14,30 +16,55 @@ import kotlin.coroutines.coroutineContext
 
 abstract class NetworkBoundResource<ResultType, RequestType> {
 
-    private val result = MutableLiveData<Result<ResultType?>>()
+    private val result = MutableLiveData<Result<ResultType>>()
 
     private val supervisorJob = SupervisorJob()
 
-    suspend fun build(): NetworkBoundResource<ResultType, RequestType> {
-        withContext(Dispatchers.Main) {
-            result.value = Result.loading(null)
-        }
-        CoroutineScope(coroutineContext).launch (supervisorJob) {
-            val dbResource = loadFromDb()
-            if (shouldFetch(dbResource)){
+    fun asLivedata(): LiveData<Result<ResultType>> = liveData (Dispatchers.IO){
+
+        emit(Result.loading(null))
+
+        val dbSource = loadFromDb()
+        val map = dbSource.map{Result.success(it)}
+
+        emitSource(map!!)
+
+        if (shouldFetch(map.value?.data)){
                 try {
-                    fetchFromNetwork(dbResource)
+                    fetchFromNetwork(map.value?.data!!)
                 }catch (e: Exception){
                     Log.e("NetworkBoundResource", "An error happened: $e")
-                    setValue(Result.error("$e", loadFromDb()))
+                    setValue(Result.error("$e", map.value?.data))
                 }
             }else {
                 Log.d(NetworkBoundResource::class.java.name, "Return data from local database")
-                setValue(Result.success(dbResource))
+                setValue(Result.success(map.value?.data!!))
             }
-        }
-        return this
+
     }
+//    suspend fun build(): NetworkBoundResource<ResultType, RequestType> = liveData{
+//
+//        emit( result.value = Result.loading(null))
+//
+//        withContext(Dispatchers.Main) {
+//            result.value = Result.loading(null)
+//        }
+//        CoroutineScope(coroutineContext).launch (supervisorJob) {
+//            val dbResource = loadFromDb()
+//            if (shouldFetch(dbResource)){
+//                try {
+//                    fetchFromNetwork(dbResource)
+//                }catch (e: Exception){
+//                    Log.e("NetworkBoundResource", "An error happened: $e")
+//                    setValue(Result.error("$e", loadFromDb()))
+//                }
+//            }else {
+//                Log.d(NetworkBoundResource::class.java.name, "Return data from local database")
+//                setValue(Result.success(dbResource))
+//            }
+//        }
+//        return this
+//    }
 
     private suspend fun fetchFromNetwork(dbSource: ResultType) {
         Log.d(NetworkBoundResource::class.java.name, "Fetch data from network")
@@ -49,20 +76,18 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     }
 
     @MainThread
-    private fun setValue(newValue: Result<ResultType?>) {
+    private fun setValue(newValue: Result<ResultType>) {
         if (result.value != newValue) {
             result.postValue(newValue)
         }
     }
-
-    fun asLivedata() = result as LiveData<Result<ResultType?>>
 
     @WorkerThread
     protected abstract fun processResponse(response: RequestType): ResultType
 
     // Called to save the result of the API response into the database
     @WorkerThread
-    abstract suspend fun saveCallResult(item: ResultType)
+    protected abstract suspend fun saveCallResult(item: ResultType)
 
     // Called with the data in the database to decide whether to fetch
     // potentially updated data from the network.
@@ -71,11 +96,10 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
     // Called to get the cached data from the database.
     @MainThread
-    abstract suspend fun loadFromDb(): ResultType
+    abstract fun loadFromDb(): LiveData <ResultType>
 
     // Called to create the API call.
     @MainThread
-    abstract suspend fun createCall(): RequestType
-
+    protected abstract suspend fun createCall(): RequestType
 
 }

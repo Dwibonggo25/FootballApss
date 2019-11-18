@@ -12,8 +12,9 @@ import javax.inject.Inject
 
 class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService) {
 
-    suspend fun getAllSports () : LiveData<Result<List<AllSportsLocal>?>> {
+    fun getAllSports () : LiveData<Result<List<AllSportsLocal>>> {
         return object : NetworkBoundResource <List<AllSportsLocal>, AllSportResponse >(){
+
             override fun processResponse(response: AllSportResponse): List<AllSportsLocal> = response.sports
 
             override suspend fun saveCallResult(item: List<AllSportsLocal>) {
@@ -22,7 +23,7 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
 
             override fun shouldFetch(data: List<AllSportsLocal>?): Boolean = data ==null || data.isEmpty()
 
-            override suspend fun loadFromDb(): List<AllSportsLocal> {
+            override fun loadFromDb(): LiveData<List<AllSportsLocal>> {
                return allStartsDao.fetchAllLeague()
             }
 
@@ -30,7 +31,7 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
                 return api.fetchAllSports()
             }
 
-        }.build().asLivedata()
+        }.asLivedata()
     }
 
     suspend fun <T> getApiResult(call: suspend () -> Response<T>): Result<T> {

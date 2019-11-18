@@ -46,11 +46,18 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
-        viewModel.sports.observe(this, Observer {data->
+
+        viewModel.sport.observe(this, Observer {data->
             data?.let {
-                when (it.value!!.status){
+                when (it.status){
                     Result.Status.SUCCESS -> {
-                        adapter.refresh(it.value!!.data!!)
+                        adapter.refresh(it.data!!)
+                    }
+                    Result.Status.LOADING -> {
+                        binding.cvLoadingInformation.showLoading()
+                    }
+                    Result.Status.ERROR -> {
+                        binding.cvLoadingInformation.showErrorMessage()
                     }
                 }
             }
