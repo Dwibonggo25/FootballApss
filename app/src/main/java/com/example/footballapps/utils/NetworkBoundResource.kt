@@ -29,51 +29,42 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
         emitSource(map!!)
 
-        if (shouldFetch(map.value?.data)){
-                try {
-                    fetchFromNetwork(map.value?.data!!)
-                }catch (e: Exception){
-                    Log.e("NetworkBoundResource", "An error happened: $e")
-                    setValue(Result.error("$e", map.value?.data))
-                }
-            }else {
-                Log.d(NetworkBoundResource::class.java.name, "Return data from local database")
-                setValue(Result.success(map.value?.data!!))
-            }
+        if (shouldFetch(map.value?.data)) {
 
-    }
-//    suspend fun build(): NetworkBoundResource<ResultType, RequestType> = liveData{
-//
-//        emit( result.value = Result.loading(null))
-//
-//        withContext(Dispatchers.Main) {
-//            result.value = Result.loading(null)
-//        }
-//        CoroutineScope(coroutineContext).launch (supervisorJob) {
-//            val dbResource = loadFromDb()
-//            if (shouldFetch(dbResource)){
-//                try {
-//                    fetchFromNetwork(dbResource)
-//                }catch (e: Exception){
-//                    Log.e("NetworkBoundResource", "An error happened: $e")
-//                    setValue(Result.error("$e", loadFromDb()))
+//            setValue(Result.loading(map.value?.data))
+            val apiResponse = createCall()
+
+//            try {
+//                apiResponse.data.let {
+//                    saveCallResult(processResponse(it!!))
+//                    setValue(Result.success(map.value?.data!!))
 //                }
-//            }else {
-//                Log.d(NetworkBoundResource::class.java.name, "Return data from local database")
-//                setValue(Result.success(dbResource))
+//            }catch (e: Exception){
+//                Log.e("Message", "$e")
+//                setValue(Result.success(map.value?.data!!))
+//                setValue(Result.error("Message", map.value?.data))
 //            }
-//        }
-//        return this
-//    }
-
-    private suspend fun fetchFromNetwork(dbSource: ResultType) {
-        Log.d(NetworkBoundResource::class.java.name, "Fetch data from network")
-        setValue(Result.loading(dbSource)) // Dispatch latest value quickly (UX purpose)
-        val apiResponse = createCall()
-        Log.e(NetworkBoundResource::class.java.name, "Data fetched from network")
-        saveCallResult(processResponse(apiResponse))
-        setValue(Result.success(dbSource))
+            if (apiResponse.status == Result.Status.SUCCESS) {
+                apiResponse.data.let {
+                    saveCallResult(processResponse(it!!))
+//                    setValue(Result.success(map.value?.data!!))
+                }
+            } else {
+                Log.e("Message", "Tau ah")
+                emit(Result.error("Message", null))
+                emitSource(map)
+            }
+        }
     }
+
+//    private suspend fun fetchFromLocal(dbSource: ResultType) {
+//        Log.d(NetworkBoundResource::class.java.name, "Fetch data from network")
+//        setValue(Result.loading(dbSource)) // Dispatch latest value quickly (UX purpose)
+//        val apiResponse = createCall()
+//        Log.e(NetworkBoundResource::class.java.name, "Data fetched from network")
+//        saveCallResult(processResponse(apiResponse))
+//        setValue(Result.success(dbSource))
+//    }
 
     @MainThread
     private fun setValue(newValue: Result<ResultType>) {
@@ -83,16 +74,16 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     }
 
     @WorkerThread
-    protected abstract fun processResponse(response: RequestType): ResultType
+    abstract fun processResponse(response: RequestType): ResultType
 
     // Called to save the result of the API response into the database
     @WorkerThread
-    protected abstract suspend fun saveCallResult(item: ResultType)
+    abstract suspend fun saveCallResult(item: ResultType)
 
     // Called with the data in the database to decide whether to fetch
     // potentially updated data from the network.
     @MainThread
-    protected abstract fun shouldFetch(data: ResultType?): Boolean
+    abstract fun shouldFetch(data: ResultType?): Boolean
 
     // Called to get the cached data from the database.
     @MainThread
@@ -100,6 +91,6 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
     // Called to create the API call.
     @MainThread
-    protected abstract suspend fun createCall(): RequestType
+    abstract suspend fun createCall(): Result<RequestType>
 
 }

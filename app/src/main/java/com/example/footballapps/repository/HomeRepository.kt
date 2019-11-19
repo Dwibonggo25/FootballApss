@@ -27,8 +27,8 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
                return allStartsDao.fetchAllLeague()
             }
 
-            override suspend fun createCall(): AllSportResponse {
-                return api.fetchAllSports()
+            override suspend fun createCall(): Result<AllSportResponse> {
+                return getApiResult{ api.fetchAllSports()}
             }
 
         }.asLivedata()
@@ -44,9 +44,9 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
                     return Result.success(body)
                 }
             }
-            return error("${response.code()} ${response.message()}")
+            return Result.error("${response.code()} ${response.message()}")
         } catch (e: Exception) {
-            return error(e.message ?: e.toString())
+            return Result.error(e.message ?: e.toString())
         }
     }
 }
