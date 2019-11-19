@@ -61,13 +61,15 @@ class CustomStateView : ConstraintLayout {
     }
 
     fun hideLoading () {
+        tvTryAgain.visibility = View.GONE
+        tvMessage.visibility = View.GONE
         progres.visibility = View.GONE
     }
 
     fun showLoading () {
         tvTryAgain.visibility = View.VISIBLE
         progres.visibility = View.GONE
-        tvMessage.visibility = View.VISIBLE
+        tvMessage.visibility = View.GONE
     }
 
     fun showErrorMessage () {

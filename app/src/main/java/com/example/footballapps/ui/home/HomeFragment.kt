@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
             data?.let {
                 when (it.status){
                     Result.Status.SUCCESS -> {
+                        binding.cvLoadingInformation.hideLoading()
                         adapter.refresh(it.data!!)
                     }
                     Result.Status.LOADING -> {
@@ -68,7 +69,6 @@ class HomeFragment : Fragment() {
         viewPager = binding.viewPagerBanner
         adapter = HomeRecyclerAdpater(ArrayList(), activity!!)
         viewPager.adapter = adapter
-
     }
 
     override fun onAttach(context: Context) {
