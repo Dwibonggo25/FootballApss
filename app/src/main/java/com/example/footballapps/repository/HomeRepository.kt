@@ -23,9 +23,7 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
 
             override fun shouldFetch(data: List<AllSportsLocal>?): Boolean = data ==null || data.isEmpty()
 
-            override fun loadFromDb(): LiveData<List<AllSportsLocal>> {
-               return allStartsDao.fetchAllLeague()
-            }
+            override fun loadFromDb(): LiveData<List<AllSportsLocal>> = allStartsDao.fetchAllLeague()
 
             override suspend fun createCall(): Result<AllSportResponse> {
                 return getApiResult{ api.fetchAllSports()}

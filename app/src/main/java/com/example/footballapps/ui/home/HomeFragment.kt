@@ -90,18 +90,11 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun notifyNextMatch () {
-        val notifiManager = ContextCompat.getSystemService(
-            context!!, NotificationManager::class.java
-        )as NotificationManager
-
-        notifiManager.sendNotification("Tes", context!!)
-    }
-
     private fun initRecyclerView() {
         viewPager = binding.viewPagerBanner
         adapter = HomeRecyclerAdpater(ArrayList(), activity!!)
         viewPager.adapter = adapter
+        binding.tabLayout.setupWithViewPager(viewPager, true)
     }
 
     override fun onAttach(context: Context) {
