@@ -6,8 +6,12 @@ import com.example.footballapps.db.dao.AllSportsDao
 import com.example.footballapps.db.entity.User
 import com.example.footballapps.db.dao.UserDao
 import com.example.footballapps.db.entity.AllSportsLocal
+import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.room.migration.Migration
 
-@Database(entities = [User::class, AllSportsLocal::class], version = 1, exportSchema = false)
+
+
+@Database(entities = [User::class, AllSportsLocal::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
