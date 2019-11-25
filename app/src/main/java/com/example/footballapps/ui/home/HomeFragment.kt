@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.example.footballapps.R
+import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentHomeBinding
 import com.example.footballapps.utils.NotificationHelper
 import com.example.footballapps.utils.sendNotification
@@ -24,13 +25,14 @@ import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
+    override fun getLayoutResourceId(): Int = R.layout.fragment_home
+
+    override fun getViewModelClass(): Class<HomeViewmodel> = HomeViewmodel::class.java
 
     private var CHANNEL_ID = "com.example.footballapps.ui.home"
 
-    private lateinit var viewModel: HomeViewmodel
 
-    private lateinit var binding: FragmentHomeBinding
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -39,26 +41,16 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewPager: ViewPager
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
-        viewModel= ViewModelProviders.of(this, viewModelFactory).get(HomeViewmodel::class.java)
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        binding.apply {
-            binding.vm = viewModel
-            binding.setLifecycleOwner(activity)
-            binding.executePendingBindings()
-        }
-
-        createNotificationChannel()
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         NotificationHelper (context!!).createNotification()
         initRecyclerView()
+        getDataAllSport()
+        createNotificationChannel()
+    }
 
-        viewModel.sport.observe(this, Observer {data->
+    private fun getDataAllSport() {
+        vm.sport.observe(this, Observer {data->
             data?.let {
                 when (it.status){
                     Result.Status.SUCCESS -> {
@@ -97,8 +89,4 @@ class HomeFragment : Fragment() {
         binding.tabLayout.setupWithViewPager(viewPager, true)
     }
 
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 }

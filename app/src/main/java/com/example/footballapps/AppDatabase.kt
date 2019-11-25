@@ -11,7 +11,7 @@ import androidx.room.migration.Migration
 
 
 
-@Database(entities = [User::class, AllSportsLocal::class], version = 2, exportSchema = false)
+@Database(entities = [User::class, AllSportsLocal::class], version = 4, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
