@@ -4,3 +4,4 @@
 4. Customview
 5. Local notification
 6. Ktlint
+7. Migrating database
