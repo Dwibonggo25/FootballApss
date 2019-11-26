@@ -6,6 +6,8 @@ import com.example.footballapps.ui.login.LoginViewModel
 import com.example.footballapps.di.ViewModelFactory
 import com.example.footballapps.di.ViewModelKey
 import com.example.footballapps.ui.home.HomeViewmodel
+import com.example.footballapps.ui.matchinfo.MatchInfoViewmodel
+import com.example.footballapps.ui.nextmatch.NextMatchViewmodel
 import com.example.footballapps.ui.splashscreen.SplashScreenViewmodel
 import dagger.Binds
 import dagger.Module
@@ -32,4 +34,13 @@ abstract class ViewModelModule {
     @ViewModelKey(HomeViewmodel::class)
     internal abstract fun providesSplashHomeViewmodel(viewModel : HomeViewmodel) : ViewModel
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(MatchInfoViewmodel::class)
+    internal abstract fun providesMatchInfoViewmodel(viewModel : MatchInfoViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(NextMatchViewmodel::class)
+    internal abstract fun providesNextMatchViewmodel(viewModel : NextMatchViewmodel) : ViewModel
 }

@@ -20,12 +20,12 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private val supervisorJob = SupervisorJob()
 
-    fun asLivedata(): LiveData<Result<ResultType>> = liveData (Dispatchers.IO){
+    fun asLivedata(): LiveData<Result<ResultType>> = liveData (Dispatchers.IO) {
 
         emit(Result.loading(null))
 
         val dbSource = loadFromDb()
-        val map = dbSource.map{Result.success(it)}
+        val map = dbSource.map {Result.success(it) }
 
         emitSource(map!!)
 
@@ -92,5 +92,4 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     // Called to create the API call.
     @MainThread
     abstract suspend fun createCall(): Result<RequestType>
-
 }

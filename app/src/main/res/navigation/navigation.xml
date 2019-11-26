@@ -17,4 +17,14 @@
             android:name="com.example.footballapps.ui.home.HomeFragment"
             android:label="fragment_home"
             tools:layout="@layout/fragment_home" />
+    <fragment
+            android:id="@+id/matchInfoFragment"
+            android:name="com.example.footballapps.ui.matchinfo.MatchInfoFragment"
+            android:label="fragment_match_info"
+            tools:layout="@layout/fragment_match_info" />
+    <fragment
+            android:id="@+id/nextMatchFragment"
+            android:name="com.example.footballapps.ui.nextmatch.NextMatchFragment"
+            android:label="fragment_next_match"
+            tools:layout="@layout/fragment_next_match" />
 </navigation>

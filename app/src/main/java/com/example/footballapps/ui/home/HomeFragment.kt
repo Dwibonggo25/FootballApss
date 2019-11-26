@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -18,6 +20,8 @@ import androidx.viewpager.widget.ViewPager
 import com.example.footballapps.R
 import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentHomeBinding
+import com.example.footballapps.ui.matchinfo.MatchInfoFragment
+import com.example.footballapps.ui.nextmatch.NextMatchFragment
 import com.example.footballapps.utils.NotificationHelper
 import com.example.footballapps.utils.sendNotification
 import com.example.footballapps.vo.Result
@@ -26,6 +30,7 @@ import javax.inject.Inject
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
+
     override fun getLayoutResourceId(): Int = R.layout.fragment_home
 
     override fun getViewModelClass(): Class<HomeViewmodel> = HomeViewmodel::class.java
@@ -47,6 +52,35 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         initRecyclerView()
         getDataAllSport()
         createNotificationChannel()
+
+        settingTablayout()
+        settingViewpager()
+    }
+
+    private fun settingViewpager() {
+        val adapter = ViewpagerAdapter(childFragmentManager)
+        adapter.addFragment(MatchInfoFragment(),"Match")
+        adapter.addFragment(NextMatchFragment(),"Next Match")
+        binding.vpResult.adapter = adapter
+    }
+
+    private fun settingTablayout() {
+        binding.tlResult.setupWithViewPager(binding.vpResult)
+    }
+
+    class ViewpagerAdapter constructor(private val fragmentManager : FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+
+        private val fragmentList = mutableListOf<Fragment>()
+        private val fragmentTitle = mutableListOf<String>()
+
+        override fun getItem(position: Int) = fragmentList[position]
+        override fun getCount() = fragmentList.size
+        override fun getPageTitle(position: Int) = fragmentTitle[position]
+
+        fun addFragment(fragment : Fragment, title: String) {
+            fragmentList.add(fragment)
+            fragmentTitle.add(title)
+        }
     }
 
     private fun getDataAllSport() {

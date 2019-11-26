@@ -1,6 +1,6 @@
 package com.example.footballapps.di.module
 
-import com.example.footballapps.MainActivity
+import com.example.footballapps.ui.activitymain.MainActivity
 import dagger.android.AndroidInjector
 import dagger.Subcomponent
 

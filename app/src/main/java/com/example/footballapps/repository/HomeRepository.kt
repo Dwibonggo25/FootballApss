@@ -3,6 +3,7 @@ package com.example.footballapps.repository
 import androidx.lifecycle.LiveData
 import com.example.footballapps.utils.NetworkBoundResource
 import com.example.footballapps.api.ApiService
+import com.example.footballapps.base.BaseRepository
 import com.example.footballapps.db.dao.AllSportsDao
 import com.example.footballapps.db.entity.AllSportsLocal
 import com.example.footballapps.model.AllSportResponse
@@ -10,7 +11,7 @@ import com.example.footballapps.vo.Result
 import retrofit2.Response
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService) {
+class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService): BaseRepository() {
 
     fun getAllSports () : LiveData<Result<List<AllSportsLocal>>> {
         return object : NetworkBoundResource <List<AllSportsLocal>, AllSportResponse >(){
@@ -30,21 +31,5 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
             }
 
         }.asLivedata()
-    }
-
-    suspend fun <T> getApiResult(call: suspend () -> Response<T>): Result<T> {
-        try {
-            val response = call()
-            if (response.isSuccessful) {
-                val body = response.body()
-
-                if (body != null) {
-                    return Result.success(body)
-                }
-            }
-            return Result.error("${response.code()} ${response.message()}")
-        } catch (e: Exception) {
-            return Result.error(e.message ?: e.toString())
-        }
     }
 }

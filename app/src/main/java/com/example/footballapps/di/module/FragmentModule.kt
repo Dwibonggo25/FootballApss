@@ -2,6 +2,8 @@ package com.example.footballapps.di.module
 
 import com.example.footballapps.ui.home.HomeFragment
 import com.example.footballapps.ui.login.LoginFragment
+import com.example.footballapps.ui.matchinfo.MatchInfoFragment
+import com.example.footballapps.ui.nextmatch.NextMatchFragment
 import com.example.footballapps.ui.splashscreen.SplashScreenFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -17,4 +19,10 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesSplashHomeFragment(): HomeFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesMatchInfoFragment(): MatchInfoFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesNextMatchFragment(): NextMatchFragment
 }

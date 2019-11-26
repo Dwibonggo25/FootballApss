@@ -9,9 +9,8 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.example.footballapps.MainActivity
+import com.example.footballapps.ui.activitymain.MainActivity
 import com.example.footballapps.R
-import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class NotificationHelper(val context: Context) {
 
