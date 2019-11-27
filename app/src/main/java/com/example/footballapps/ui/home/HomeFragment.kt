@@ -41,32 +41,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         createNotificationChannel()
     }
 
-//    private fun settingViewpager() {
-//        val adapter = ViewpagerAdapter(childFragmentManager)
-//        adapter.addFragment(MatchInfoFragment(),"Match")
-//        adapter.addFragment(NextMatchFragment(),"Next Match")
-//        binding.vpResult.adapter = adapter
-//    }
-//
-//    private fun settingTablayout() {
-//        binding.tlResult.setupWithViewPager(binding.vpResult)
-//    }
-//
-//    class ViewpagerAdapter constructor(private val fragmentManager : FragmentManager) : FragmentPagerAdapter(fragmentManager) {
-//
-//        private val fragmentList = mutableListOf<Fragment>()
-//        private val fragmentTitle = mutableListOf<String>()
-//
-//        override fun getItem(position: Int) = fragmentList[position]
-//        override fun getCount() = fragmentList.size
-//        override fun getPageTitle(position: Int) = fragmentTitle[position]
-//
-//        fun addFragment(fragment : Fragment, title: String) {
-//            fragmentList.add(fragment)
-//            fragmentTitle.add(title)
-//        }
-//    }
-
     private fun getDataAllSport() {
         vm.sport.observe(this, Observer {data->
             data?.let {

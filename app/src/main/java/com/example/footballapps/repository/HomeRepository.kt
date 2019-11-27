@@ -29,7 +29,6 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
             override suspend fun createCall(): Result<AllSportResponse> {
                 return getApiResult{ api.fetchAllSports()}
             }
-
         }.asLivedata()
     }
 }

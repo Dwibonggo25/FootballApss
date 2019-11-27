@@ -7,22 +7,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <TableLayout
-                android:id="@+id/tableLayout"
+        <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tlInfoMatch"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
         <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vpInfoMatch"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/tlInfoMatch" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
