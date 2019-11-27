@@ -3,6 +3,7 @@ package com.example.footballapps.di.module
 import com.example.footballapps.AppDatabase
 import com.example.footballapps.api.ApiService
 import com.example.footballapps.db.dao.AllSportsDao
+import com.example.footballapps.db.dao.FavoritesDao
 import com.example.footballapps.db.dao.PreviousMatchDao
 import com.example.footballapps.db.dao.UserDao
 import com.example.footballapps.repository.HomeRepository
@@ -30,6 +31,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
+    fun providesfavoritesDao (db: AppDatabase) = db.favoritesDao()
+
+    @Provides
+    @Singleton
     fun providesLoginRepository (userDao: UserDao, apiService: ApiService): LoginRepository = LoginRepository (userDao, apiService)
 
     @Provides
@@ -42,6 +47,6 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesScoresRepository (apiService: ApiService, previousMatchDao: PreviousMatchDao): ScoresRepository= ScoresRepository (apiService, previousMatchDao )
+    fun providesScoresRepository (apiService: ApiService, previousMatchDao: PreviousMatchDao, allSportsDao: AllSportsDao, favoritesDao: FavoritesDao): ScoresRepository= ScoresRepository (apiService, previousMatchDao, allSportsDao, favoritesDao)
 
 }
