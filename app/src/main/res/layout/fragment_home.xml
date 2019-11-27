@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
                 name="vm"
                 type="com.example.footballapps.ui.home.HomeViewmodel" />
@@ -35,24 +36,13 @@
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp" />
 
-        <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tlResult"
+        <include
+                layout="@layout/content_home"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
-
-        <androidx.viewpager.widget.ViewPager
-                android:id="@+id/vpResult"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tlResult" />
 
         <com.example.footballapps.customview.CustomStateView
                 android:id="@+id/cvLoadingInformation"

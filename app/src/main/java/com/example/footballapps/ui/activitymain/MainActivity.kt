@@ -49,11 +49,17 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
         // Set up navigation menu
         bottomNavigationView.setupWithNavController(navController)
-
-        val host = NavHostFragment.create(R.navigation.navigation)
-        supportFragmentManager.beginTransaction().replace(R.id.main_nav_fragment, host).setPrimaryNavigationFragment(host).commit()
+        navController.addOnDestinationChangedListener(navigationListener)
     }
 
+    private val navigationListener = NavController.OnDestinationChangedListener{_, destination, _ ->
+        when (destination.id){
+            R.id.scoresFragment -> {
+
+            }
+        }
+
+    }
     override fun onSupportNavigateUp(): Boolean = Navigation.findNavController(this, R.id.container).navigateUp()
 
     private fun initBinding() {

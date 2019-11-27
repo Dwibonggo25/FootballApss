@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/navigation"
-            app:startDestination="@id/homeFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/navigation"
+        app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/loginFragment"
-              android:name="com.example.footballapps.ui.login.LoginFragment"
-              android:label="fragment_login"
-              tools:layout="@layout/fragment_login"/>
-    <fragment android:id="@+id/splashScreenFragment"
+    <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.footballapps.ui.login.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" />
+    <fragment
+            android:id="@+id/splashScreenFragment"
             android:name="com.example.footballapps.ui.splashscreen.SplashScreenFragment"
-              android:label="fragment_splash_screen" tools:layout="@layout/fragment_splash_screen"/>
+            android:label="fragment_splash_screen"
+            tools:layout="@layout/fragment_splash_screen" />
     <fragment
             android:id="@+id/homeFragment"
             android:name="com.example.footballapps.ui.home.HomeFragment"
@@ -27,4 +30,9 @@
             android:name="com.example.footballapps.ui.nextmatch.NextMatchFragment"
             android:label="fragment_next_match"
             tools:layout="@layout/fragment_next_match" />
+    <fragment
+            android:id="@+id/scoresFragment"
+            android:name="com.example.footballapps.ui.scores.ScoresFragment"
+            android:label="fragment_scores"
+            tools:layout="@layout/fragment_scores" />
 </navigation>

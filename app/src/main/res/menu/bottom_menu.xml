@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/bottomHome"
-        android:title="@string/home"
-        android:icon="@drawable/ic_home"/>
+            android:id="@+id/homeFragment"
+            android:enabled="true"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home"
+            app:showAsAction="ifRoom" />
     <item
-            android:id="@+id/bottomScore"
+            android:id="@+id/scoresFragment"
+            android:enabled="true"
+            android:icon="@drawable/ic_score"
             android:title="@string/scores"
-            android:icon="@drawable/ic_score"/>
+            app:showAsAction="ifRoom" />
     <item
             android:id="@+id/bottomFavorite"
+            android:enabled="true"
+            android:icon="@drawable/ic_favorite"
             android:title="@string/favorites"
-            android:icon="@drawable/ic_favorite"/>
+            app:showAsAction="ifRoom" />
     <item
             android:id="@+id/bottomSearch"
+            android:enabled="true"
+            android:icon="@drawable/ic_explore"
             android:title="@string/search"
-            android:icon="@drawable/ic_explore"/>
+            app:showAsAction="ifRoom" />
 </menu>
