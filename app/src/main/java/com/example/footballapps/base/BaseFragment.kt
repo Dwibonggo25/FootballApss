@@ -50,4 +50,5 @@ abstract class BaseFragment <B: ViewDataBinding, V: ViewModel> : Fragment() {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }
+
 }

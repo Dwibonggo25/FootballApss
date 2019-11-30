@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.footballapps.ui.login.LoginViewModel
 import com.example.footballapps.di.ViewModelFactory
 import com.example.footballapps.di.ViewModelKey
+import com.example.footballapps.ui.allmatch.AllMatchViewmodel
 import com.example.footballapps.ui.home.HomeViewmodel
 import com.example.footballapps.ui.matchinfo.MatchInfoViewmodel
 import com.example.footballapps.ui.nextmatch.NextMatchViewmodel
@@ -49,4 +50,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ScoresViewmodel::class)
     internal abstract fun providesScoresViewmodel(viewModel : ScoresViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AllMatchViewmodel::class)
+    internal abstract fun providesAllMatchViewmodel(viewModel : AllMatchViewmodel) : ViewModel
 }

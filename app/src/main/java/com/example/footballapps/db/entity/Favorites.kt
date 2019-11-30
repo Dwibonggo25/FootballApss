@@ -10,9 +10,9 @@ data class Favorites (
     @ColumnInfo(name = "id")
     val id: Int,
     @ColumnInfo(name = "id_events")
-    val eventId: String,
+    val eventId: String?,
     @ColumnInfo(name = "status")
-    val status: Int
+    val status: Int?
 ){
     constructor(): this(0,"",0)
 }

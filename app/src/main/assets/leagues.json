@@ -1,0 +1,1304 @@
+[
+{
+    "idLeague": "4328",
+    "strLeague": "English Premier League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Premier League"
+},
+{
+    "idLeague": "4329",
+    "strLeague": "English League Championship",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Championship, Sky Bet Championship"
+},
+{
+    "idLeague": "4330",
+    "strLeague": "Scottish Premier League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4331",
+    "strLeague": "German Bundesliga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Bundesliga, Fußball-Bundesliga"
+},
+{
+    "idLeague": "4332",
+    "strLeague": "Italian Serie A",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4334",
+    "strLeague": "French Ligue 1",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4335",
+    "strLeague": "Spanish La Liga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "La Liga Santander"
+},
+{
+    "idLeague": "4336",
+    "strLeague": "Greek Superleague Greece",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4337",
+    "strLeague": "Dutch Eredivisie",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4338",
+    "strLeague": "Belgian Jupiler League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Jupiler Pro League"
+},
+{
+    "idLeague": "4339",
+    "strLeague": "Turkish Super Lig",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4340",
+    "strLeague": "Danish Superliga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4344",
+    "strLeague": "Portuguese Primeira Liga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Liga NOS"
+},
+{
+    "idLeague": "4346",
+    "strLeague": "American Major League Soccer",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "MLS, Major League Soccer"
+},
+{
+    "idLeague": "4347",
+    "strLeague": "Swedish Allsvenskan",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4350",
+    "strLeague": "Mexican Primera League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4351",
+    "strLeague": "Brazilian Brasileirao",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4354",
+    "strLeague": "Ukrainian Premier League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4355",
+    "strLeague": "Russian Football Premier League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Чемпионат России по футболу"
+},
+{
+    "idLeague": "4356",
+    "strLeague": "Australian A-League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4358",
+    "strLeague": "Eliteserien",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Eliteserien"
+},
+{
+    "idLeague": "4359",
+    "strLeague": "Chinese Super League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4367",
+    "strLeague": "_No League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4370",
+    "strLeague": "Formula 1",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "F1, Formula One, Formula1, Formula 1, Formula-1"
+},
+{
+    "idLeague": "4371",
+    "strLeague": "Formula E",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "Formula-E"
+},
+{
+    "idLeague": "4372",
+    "strLeague": "BTCC",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "British Touring Car Championship"
+},
+{
+    "idLeague": "4373",
+    "strLeague": "IndyCar Series",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4380",
+    "strLeague": "NHL",
+    "strSport": "Ice Hockey",
+    "strLeagueAlternate": "National Hockey League"
+},
+{
+    "idLeague": "4381",
+    "strLeague": "UK Elite Ice Hockey League",
+    "strSport": "Ice Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4387",
+    "strLeague": "NBA",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "National Basketball Association"
+},
+{
+    "idLeague": "4388",
+    "strLeague": "NBA G League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "NBA D League"
+},
+{
+    "idLeague": "4391",
+    "strLeague": "NFL",
+    "strSport": "American Football",
+    "strLeagueAlternate": "NFL"
+},
+{
+    "idLeague": "4393",
+    "strLeague": "NASCAR Sprint Cup Series",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "NASCAR Winston Cup Series"
+},
+{
+    "idLeague": "4394",
+    "strLeague": "Italian Serie B",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4395",
+    "strLeague": "Scottish Championship",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4396",
+    "strLeague": "English League 1",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "League One, Sky Bet League One"
+},
+{
+    "idLeague": "4397",
+    "strLeague": "English League 2",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "League Two, Sky Bet League Two"
+},
+{
+    "idLeague": "4398",
+    "strLeague": "Italian Lega Pro",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Serie C"
+},
+{
+    "idLeague": "4399",
+    "strLeague": "German 2. Bundesliga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4400",
+    "strLeague": "Spanish Adelante",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Segunda División, LaLiga SmartBank, LaLiga 123"
+},
+{
+    "idLeague": "4401",
+    "strLeague": "French Ligue 2",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4403",
+    "strLeague": "Swedish Superettan",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4404",
+    "strLeague": "Brazilian Brasileirao Serie B",
+    "strSport": "Soccer",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4405",
+    "strLeague": "CFL",
+    "strSport": "American Football",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4406",
+    "strLeague": "Argentinian Primera Division",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4407",
+    "strLeague": "MotoGP",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4408",
+    "strLeague": "Spanish Liga ACB",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Liga Endesa"
+},
+{
+    "idLeague": "4409",
+    "strLeague": "WRC",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "World Rally Championship"
+},
+{
+    "idLeague": "4410",
+    "strLeague": "British GT Championship",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4411",
+    "strLeague": "WTCC",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "FIA World Touring Car Championship"
+},
+{
+    "idLeague": "4412",
+    "strLeague": "Super GT series",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4413",
+    "strLeague": "WEC",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "FIA World Endurance Championship"
+},
+{
+    "idLeague": "4414",
+    "strLeague": "Rugby Union Premiership",
+    "strSport": "Rugby",
+    "strLeagueAlternate": "Premiership Rugby"
+},
+{
+    "idLeague": "4415",
+    "strLeague": "English Rugby League Super League",
+    "strSport": "Rugby",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4416",
+    "strLeague": "Australian National Rugby League",
+    "strSport": "Rugby",
+    "strLeagueAlternate": "NRL, National Rugby League"
+},
+{
+    "idLeague": "4417",
+    "strLeague": "Australian National Rugby Championship",
+    "strSport": "Rugby",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4419",
+    "strLeague": "Swedish Hockey League",
+    "strSport": "Ice Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4422",
+    "strLeague": "Polish Ekstraklasa",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4423",
+    "strLeague": "LNB",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4424",
+    "strLeague": "MLB",
+    "strSport": "Baseball",
+    "strLeagueAlternate": "Major League Baseball"
+},
+{
+    "idLeague": "4425",
+    "strLeague": "PGA Tour",
+    "strSport": "Golf",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4426",
+    "strLeague": "European Tour",
+    "strSport": "Golf",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4427",
+    "strLeague": "Can-Am",
+    "strSport": "Baseball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4428",
+    "strLeague": "Frontier League",
+    "strSport": "Baseball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4429",
+    "strLeague": "FIFA World Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4430",
+    "strLeague": "Top 14",
+    "strSport": "Rugby",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4431",
+    "strLeague": "British Basketball League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "BBL"
+},
+{
+    "idLeague": "4432",
+    "strLeague": "Uruguayan Primera Division",
+    "strSport": "Soccer",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4433",
+    "strLeague": "Italian Lega Basket",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4434",
+    "strLeague": "Australian NBL",
+    "strSport": "Basketball",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4435",
+    "strLeague": "American NASL",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4436",
+    "strLeague": "Moto2",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4437",
+    "strLeague": "Moto3",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4438",
+    "strLeague": "DTM",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4439",
+    "strLeague": "Blancpain GT Series Endurance Cup",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "Blancpain Endurance"
+},
+{
+    "idLeague": "4440",
+    "strLeague": "Blancpain GT World Challenge Europe",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "Blancpain GT Series Sprint Cup"
+},
+{
+    "idLeague": "4441",
+    "strLeague": "German BBL",
+    "strSport": "Basketball",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4442",
+    "strLeague": "Chinese CBA",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4443",
+    "strLeague": "UFC",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Ultimate Fighting Championship"
+},
+{
+    "idLeague": "4444",
+    "strLeague": "WWE",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "World Wrestling Entertainment"
+},
+{
+    "idLeague": "4445",
+    "strLeague": "Boxing",
+    "strSport": "Fighting",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4446",
+    "strLeague": "Pro14",
+    "strSport": "Rugby",
+    "strLeagueAlternate": "Celtic League, Magners League, RaboDirect Pro12"
+},
+{
+    "idLeague": "4447",
+    "strLeague": "Dakar Rally",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4448",
+    "strLeague": "ROH",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Ring of Honor"
+},
+{
+    "idLeague": "4449",
+    "strLeague": "NJPW",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "New Japan Pro Wrestling"
+},
+{
+    "idLeague": "4450",
+    "strLeague": "WCW",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "World Championship Wrestling"
+},
+{
+    "idLeague": "4451",
+    "strLeague": "ECW",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Extreme Championship Wrestling"
+},
+{
+    "idLeague": "4452",
+    "strLeague": "Greek Basket League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4453",
+    "strLeague": "NWA",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "National Wrestling Alliance"
+},
+{
+    "idLeague": "4454",
+    "strLeague": "SBK",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": " SBK, World Superbike, WSB, or WSBK"
+},
+{
+    "idLeague": "4455",
+    "strLeague": "TNA",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Impact Wrestling"
+},
+{
+    "idLeague": "4456",
+    "strLeague": "AFL",
+    "strSport": "Australian Football",
+    "strLeagueAlternate": "Australian rules football"
+},
+{
+    "idLeague": "4457",
+    "strLeague": "Norwegian 1. Divisjon",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4458",
+    "strLeague": "County Championship Division 1",
+    "strSport": "Cricket",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4459",
+    "strLeague": "County Championship Division 2",
+    "strSport": "Cricket",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4460",
+    "strLeague": "Indian Premier League",
+    "strSport": "Cricket",
+    "strLeagueAlternate": "IPL"
+},
+{
+    "idLeague": "4461",
+    "strLeague": "Big Bash League",
+    "strSport": "Cricket",
+    "strLeagueAlternate": "KFC Big Bash League"
+},
+{
+    "idLeague": "4462",
+    "strLeague": "Ram Slam T20 Challenge",
+    "strSport": "Cricket",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4463",
+    "strLeague": "t20 Blast",
+    "strSport": "Cricket",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4464",
+    "strLeague": "ATP World Tour",
+    "strSport": "Tennis",
+    "strLeagueAlternate": "Association of Tennis Professionals"
+},
+{
+    "idLeague": "4465",
+    "strLeague": "UCI World Tour",
+    "strSport": "Cycling",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4466",
+    "strLeague": "Electric GT Championship",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "Electric GT"
+},
+{
+    "idLeague": "4467",
+    "strLeague": "Bellator MMA",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Bellator Fighting Championships"
+},
+{
+    "idLeague": "4468",
+    "strLeague": "AMA Supercross",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4469",
+    "strLeague": "Pro Motocross",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "AMA Motocross Championship"
+},
+{
+    "idLeague": "4470",
+    "strLeague": "Arena Football League",
+    "strSport": "American Football",
+    "strLeagueAlternate": "AFL"
+},
+{
+    "idLeague": "4471",
+    "strLeague": "Indoor Football League",
+    "strSport": "American Football",
+    "strLeagueAlternate": "IFL"
+},
+{
+    "idLeague": "4472",
+    "strLeague": "Welsh Premier League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Cymru Premier"
+},
+{
+    "idLeague": "4473",
+    "strLeague": "National Arena League",
+    "strSport": "American Football",
+    "strLeagueAlternate": "NAL"
+},
+{
+    "idLeague": "4474",
+    "strLeague": "Israeli Basketball Premier League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Ligat HaAl, ליגת העל‎"
+},
+{
+    "idLeague": "4475",
+    "strLeague": "Turkish Basketbol Super Ligi",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "BSL"
+},
+{
+    "idLeague": "4476",
+    "strLeague": "Russian VTB United League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Единая Лига ВТБ"
+},
+{
+    "idLeague": "4477",
+    "strLeague": "Adriatic ABA League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Adriatic League"
+},
+{
+    "idLeague": "4478",
+    "strLeague": "Lithuanian LKL",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Lietuvos krepšinio lyga"
+},
+{
+    "idLeague": "4479",
+    "strLeague": "NCAA Division 1",
+    "strSport": "American Football",
+    "strLeagueAlternate": "NCAA D-I Football"
+},
+{
+    "idLeague": "4480",
+    "strLeague": "UEFA Champions League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Champions League"
+},
+{
+    "idLeague": "4481",
+    "strLeague": "UEFA Europa League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Europa League"
+},
+{
+    "idLeague": "4482",
+    "strLeague": "FA Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Football Association Cup, The Emirates FA Cup"
+},
+{
+    "idLeague": "4483",
+    "strLeague": "Copa del Rey",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Spanish Cup"
+},
+{
+    "idLeague": "4484",
+    "strLeague": "Coupe de France",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "French Cup"
+},
+{
+    "idLeague": "4485",
+    "strLeague": "DFB-Pokal",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "DFB Cup"
+},
+{
+    "idLeague": "4486",
+    "strLeague": "Formula 2",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "F2, Formula Two, Formula2, Formula-2"
+},
+{
+    "idLeague": "4487",
+    "strLeague": "Formula 3",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4488",
+    "strLeague": "SportsCar Championship",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4489",
+    "strLeague": "V8 Supercars",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "Supercars Championship, Virgin Australia Supercars Championship"
+},
+{
+    "idLeague": "4490",
+    "strLeague": "UEFA Nations League",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "UNL"
+},
+{
+    "idLeague": "4491",
+    "strLeague": "Rizin Fighting",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Rizin Fighting Federation"
+},
+{
+    "idLeague": "4492",
+    "strLeague": "Cage Warriors",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "CWFC"
+},
+{
+    "idLeague": "4493",
+    "strLeague": "Invicta FC",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Invicta Fighting Championships"
+},
+{
+    "idLeague": "4494",
+    "strLeague": "ACB MMA",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Absolute Championship Akhmat, ACA, Absolute Championship Berkut"
+},
+{
+    "idLeague": "4495",
+    "strLeague": "ONE Championship",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "ONE Fighting Championship, ONE FC"
+},
+{
+    "idLeague": "4496",
+    "strLeague": "African Cup of Nations",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Coupe d'Afrique des Nations, AFCON"
+},
+{
+    "idLeague": "4497",
+    "strLeague": "Colombia Categoría Primera A",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4498",
+    "strLeague": "Confederations Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4499",
+    "strLeague": "Copa America",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4500",
+    "strLeague": "Copa Argentina",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4501",
+    "strLeague": "Copa Libertadores",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4502",
+    "strLeague": "European Championships",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "EURO2020"
+},
+{
+    "idLeague": "4503",
+    "strLeague": "FIFA Club World Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Intercontinental Cup"
+},
+{
+    "idLeague": "4504",
+    "strLeague": "Coupe de la Ligue",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4505",
+    "strLeague": "International Champions Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4506",
+    "strLeague": "Coppa Italia",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4507",
+    "strLeague": "Supercoppa Italiana",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4509",
+    "strLeague": "Taca de Liga",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4510",
+    "strLeague": "Taca de Portugal",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4511",
+    "strLeague": "Supercopa de Espana",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4512",
+    "strLeague": "UEFA Super Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4513",
+    "strLeague": "Venezuela Primera Division",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4514",
+    "strLeague": "2018 League of Legends World Championship",
+    "strSport": "Esports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4515",
+    "strLeague": "Fortnite",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4516",
+    "strLeague": "WNBA",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4517",
+    "strLeague": "WTA Tour",
+    "strSport": "Tennis",
+    "strLeagueAlternate": "Womens Tennis Association"
+},
+{
+    "idLeague": "4518",
+    "strLeague": "_Defunct Basketball Teams",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4519",
+    "strLeague": "_Defunct Soccer Teams",
+    "strSport": "Soccer",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4520",
+    "strLeague": "Moroccan Championship",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Botola Moroccan Championship"
+},
+{
+    "idLeague": "4521",
+    "strLeague": "American NWSL",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "National Womens Soccer League"
+},
+{
+    "idLeague": "4522",
+    "strLeague": "_Defunct Motorsport Teams",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4523",
+    "strLeague": "European Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4524",
+    "strLeague": "UEFA Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4525",
+    "strLeague": "English Old 1st Division",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "1st division, first division"
+},
+{
+    "idLeague": "4526",
+    "strLeague": "Football League Super Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "ScreenSport Super Cup"
+},
+{
+    "idLeague": "4528",
+    "strLeague": "League of Legends Pro League",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4529",
+    "strLeague": "League of Legends Champions Korea",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4530",
+    "strLeague": "League of Legends European Championship",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4531",
+    "strLeague": "League of Legends Championship Series",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4532",
+    "strLeague": "League of Legends Master Series",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4533",
+    "strLeague": "Handball-Bundesliga",
+    "strSport": "Handball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4534",
+    "strLeague": "Liga ASOBAL",
+    "strSport": "Handball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4535",
+    "strLeague": "Nemzeti Bajnokság I",
+    "strSport": "Handball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4536",
+    "strLeague": "LNH Division 1",
+    "strSport": "Handball",
+    "strLeagueAlternate": "Lidl Star Ligue"
+},
+{
+    "idLeague": "4537",
+    "strLeague": "Polish Handball Superliga",
+    "strSport": "Handball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4538",
+    "strLeague": "New Zealand Netball League",
+    "strSport": "Netball",
+    "strLeagueAlternate": "ANZ Premiership"
+},
+{
+    "idLeague": "4539",
+    "strLeague": "UK Netball Superleague",
+    "strSport": "Netball",
+    "strLeagueAlternate": "Netball Superleague"
+},
+{
+    "idLeague": "4540",
+    "strLeague": "Australian Super Netball League",
+    "strSport": "Netball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4541",
+    "strLeague": "_Defunct Netball Teams",
+    "strSport": "Netball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4542",
+    "strLeague": "A1 Ethniki Volleyball",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": "Ethnikos "
+},
+{
+    "idLeague": "4543",
+    "strLeague": "Turkish Volleyball League",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": "Efeler Ligi"
+},
+{
+    "idLeague": "4544",
+    "strLeague": "Italian Volleyball League",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4545",
+    "strLeague": "Russian Volleyball Super League",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": "Волейбольная суперлига"
+},
+{
+    "idLeague": "4546",
+    "strLeague": "EuroLeague Basketball",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4547",
+    "strLeague": "EuroCup Basketball",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4548",
+    "strLeague": "Basketball Champions League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4549",
+    "strLeague": "FIBA Basketball World Cup",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4550",
+    "strLeague": "European Rugby Champions Cup",
+    "strSport": "Rugby",
+    "strLeagueAlternate": "Heineken Champions Cup"
+},
+{
+    "idLeague": "4551",
+    "strLeague": "Super Rugby",
+    "strSport": "Rugby",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4552",
+    "strLeague": "AAF",
+    "strSport": "American Football",
+    "strLeagueAlternate": "Alliance of American Football"
+},
+{
+    "idLeague": "4553",
+    "strLeague": "LPGA Tour",
+    "strSport": "Golf",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4554",
+    "strLeague": "PDC Darts",
+    "strSport": "Darts",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4555",
+    "strLeague": "World Snooker",
+    "strSport": "Snooker",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4558",
+    "strLeague": "Mens FIH Pro League",
+    "strSport": "Field Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4559",
+    "strLeague": "Euro Hockey League",
+    "strSport": "Field Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4560",
+    "strLeague": "Hockey World Cup",
+    "strSport": "Field Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4561",
+    "strLeague": "BDO Darts",
+    "strSport": "Darts",
+    "strLeagueAlternate": "British Darts Organisation"
+},
+{
+    "idLeague": "4562",
+    "strLeague": "International Friendlies",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Friendlies"
+},
+{
+    "idLeague": "4563",
+    "strLeague": "All Elite Wrestling",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "AEW"
+},
+{
+    "idLeague": "4564",
+    "strLeague": "International Race of Champions",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "IROC"
+},
+{
+    "idLeague": "4565",
+    "strLeague": "FIFA Womens World Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Women's World Cup"
+},
+{
+    "idLeague": "4566",
+    "strLeague": "UEFA European Under-21 Championship",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "UEFA European U21 Championship"
+},
+{
+    "idLeague": "4567",
+    "strLeague": "Bare Knuckle Fighting Championship",
+    "strSport": "Fighting",
+    "strLeagueAlternate": "Bare Knuckle Boxing"
+},
+{
+    "idLeague": "4568",
+    "strLeague": "FIFA eWorld Cup Series",
+    "strSport": "ESports",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4569",
+    "strLeague": "Club Friendlies",
+    "strSport": "Soccer",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4570",
+    "strLeague": "EFL Cup",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Football League Cup, Carabao Cup"
+},
+{
+    "idLeague": "4571",
+    "strLeague": "FA Community Shield",
+    "strSport": "Soccer",
+    "strLeagueAlternate": "Community Shield"
+},
+{
+    "idLeague": "4573",
+    "strLeague": "NASCAR Xfinity Series",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "NXS"
+},
+{
+    "idLeague": "4574",
+    "strLeague": "Rugby World Cup",
+    "strSport": "Rugby",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4575",
+    "strLeague": "Cricket World Cup",
+    "strSport": "Cricket",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4576",
+    "strLeague": "WTCR",
+    "strSport": "Motorsport",
+    "strLeagueAlternate": "World Touring Car Cup"
+},
+{
+    "idLeague": "4577",
+    "strLeague": "LNB Pro B",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4578",
+    "strLeague": "Polish Basketball League",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Polska Liga Koszykówki"
+},
+{
+    "idLeague": "4579",
+    "strLeague": "PBL",
+    "strSport": "Basketball",
+    "strLeagueAlternate": "Pro Basketball League"
+},
+{
+    "idLeague": "4580",
+    "strLeague": "Hungarian Nemzeti Bajnokság IA",
+    "strSport": "Basketball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4581",
+    "strLeague": "Laver Cup",
+    "strSport": "Tennis",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4582",
+    "strLeague": "French Ligue A Mens Volleyball",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4583",
+    "strLeague": "French Ligue A Womens Volleyball",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": null
+},
+{
+    "idLeague": "4584",
+    "strLeague": "Italian Womens Volleyball League",
+    "strSport": "Volleyball",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4585",
+    "strLeague": "Field Hockey Olympics",
+    "strSport": "Field Hockey",
+    "strLeagueAlternate": ""
+},
+{
+    "idLeague": "4586",
+    "strLeague": "Field Hockey Olympics Women",
+    "strSport": "Field Hockey",
+    "strLeagueAlternate": ""
+}
+]

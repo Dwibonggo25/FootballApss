@@ -35,4 +35,9 @@
             android:name="com.example.footballapps.ui.scores.ScoresFragment"
             android:label="fragment_scores"
             tools:layout="@layout/fragment_scores" />
+    <fragment
+            android:id="@+id/allMatchFragment"
+            android:name="com.example.footballapps.ui.allmatch.AllMatchFragment"
+            android:label="fragment_all_match"
+            tools:layout="@layout/fragment_all_match" />
 </navigation>

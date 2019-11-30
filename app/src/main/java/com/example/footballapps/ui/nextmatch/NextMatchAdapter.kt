@@ -6,30 +6,33 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballapps.databinding.RvNextMatchBinding
-import com.example.footballapps.model.NextEvent
+import com.example.footballapps.db.entity.NextEvent
 
 class NextMatchAdapter (private val listener: ClickListener): ListAdapter<NextEvent, NextMatchAdapter.ViewHolder>(DiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NextMatchAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = RvNextMatchBinding.inflate(layoutInflater, parent, false)
 
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: NextMatchAdapter.ViewHolder, position: Int) = holder.bind(getItem(position), listener)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position), listener)
 
     class ViewHolder(private val binding: RvNextMatchBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind (nextEvent: NextEvent, listener: ClickListener) {
 
-            binding.tvHomeTeam.setText(nextEvent.strHomeTeam)
-            binding.tvAwayTeam.setText(nextEvent.strAwayTeam)
+            binding.apply {
 
-            binding.imageView.setOnClickListener {
-                listener.onNextMatchClick(nextEvent)
+
+                list = nextEvent
+
+                binding.imageView.setOnClickListener {
+                    listener.onNextMatchClick(nextEvent)
+                }
+                binding.executePendingBindings()
             }
-            binding.executePendingBindings()
         }
     }
 

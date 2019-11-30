@@ -38,6 +38,9 @@ buildscript {
         firebase_analytics_version = '17.2.0'
         firebase_crashlytics_version = '2.10.1'
         play_service_version = '4.3.0'
+
+        room_version = "2.2.2"
+        gsonVersion = '2.8.2'
     }
 
     repositories {

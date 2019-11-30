@@ -5,13 +5,15 @@ import com.example.footballapps.utils.NetworkBoundResource
 import com.example.footballapps.api.ApiService
 import com.example.footballapps.base.BaseRepository
 import com.example.footballapps.db.dao.AllSportsDao
+import com.example.footballapps.db.dao.LeaguesDao
 import com.example.footballapps.db.entity.AllSportsLocal
+import com.example.footballapps.db.entity.Leagues
 import com.example.footballapps.model.AllSportResponse
 import com.example.footballapps.vo.Result
 import retrofit2.Response
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService): BaseRepository() {
+class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao, private val api: ApiService, val leaguesDao: LeaguesDao): BaseRepository() {
 
     fun getAllSports () : LiveData<Result<List<AllSportsLocal>>> {
         return object : NetworkBoundResource <List<AllSportsLocal>, AllSportResponse >(){
@@ -31,4 +33,6 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
             }
         }.asLivedata()
     }
+
+    suspend fun insertLeagues(data: List<Leagues>) = leaguesDao.insertLeagues(data)
 }

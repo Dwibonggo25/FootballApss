@@ -2,13 +2,9 @@ package com.example.footballapps.di.module
 
 import com.example.footballapps.AppDatabase
 import com.example.footballapps.api.ApiService
-import com.example.footballapps.db.dao.AllSportsDao
-import com.example.footballapps.db.dao.FavoritesDao
-import com.example.footballapps.db.dao.PreviousMatchDao
-import com.example.footballapps.db.dao.UserDao
+import com.example.footballapps.db.dao.*
 import com.example.footballapps.repository.HomeRepository
 import com.example.footballapps.repository.LoginRepository
-import com.example.footballapps.repository.NextMatchRepository
 import com.example.footballapps.repository.ScoresRepository
 import dagger.Module
 import dagger.Provides
@@ -31,7 +27,15 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesfavoritesDao (db: AppDatabase) = db.favoritesDao()
+    fun providesFavoritesDao (db: AppDatabase) = db.favoritesDao()
+
+    @Provides
+    @Singleton
+    fun providesNextMatchDao (db: AppDatabase) = db.nextMatchDao()
+
+    @Provides
+    @Singleton
+    fun providesLeaguesDao (db: AppDatabase) = db.leaguesDao()
 
     @Provides
     @Singleton
@@ -39,14 +43,10 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesHomeRepository (allSportsDao: AllSportsDao, apiService: ApiService): HomeRepository= HomeRepository (allSportsDao, apiService)
+    fun providesHomeRepository (allSportsDao: AllSportsDao, apiService: ApiService, leaguesDao: LeaguesDao): HomeRepository= HomeRepository (allSportsDao, apiService, leaguesDao)
 
     @Provides
     @Singleton
-    fun providesNextMatchRepository (allSportsDao: AllSportsDao, apiService: ApiService): NextMatchRepository= NextMatchRepository (allSportsDao, apiService)
-
-    @Provides
-    @Singleton
-    fun providesScoresRepository (apiService: ApiService, previousMatchDao: PreviousMatchDao, allSportsDao: AllSportsDao, favoritesDao: FavoritesDao): ScoresRepository= ScoresRepository (apiService, previousMatchDao, allSportsDao, favoritesDao)
+    fun providesScoresRepository (apiService: ApiService, previousMatchDao: PreviousMatchDao, allSportsDao: AllSportsDao, favoritesDao: FavoritesDao, nextDao: NextMatchDao, leaguesDao: LeaguesDao): ScoresRepository= ScoresRepository (apiService, previousMatchDao, allSportsDao, favoritesDao, nextDao, leaguesDao)
 
 }

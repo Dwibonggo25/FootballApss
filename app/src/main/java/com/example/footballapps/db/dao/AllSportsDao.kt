@@ -12,5 +12,4 @@ interface AllSportsDao {
 
     @Query("SELECT * from all_sports")
     fun fetchAllLeague(): LiveData<List<AllSportsLocal>>
-
 }

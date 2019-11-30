@@ -7,12 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.footballapps.R
 import com.example.footballapps.databinding.RvMatchInfoBinding
+import com.example.footballapps.db.entity.Favorites
 import com.example.footballapps.db.entity.PreviousMatchLocal
 import com.example.footballapps.ui.nextmatch.NextMatchAdapter
 
-class PreviousMatchAdapter (private val idEvents: String, val listener: ClickListener): ListAdapter<PreviousMatchLocal, PreviousMatchAdapter.ViewHolder>(DiffCallback) {
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position), idEvents, listener)
+class PreviousMatchAdapter (val listener: ClickListener): ListAdapter<PreviousMatchLocal, PreviousMatchAdapter.ViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int) : ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,15 +19,13 @@ class PreviousMatchAdapter (private val idEvents: String, val listener: ClickLis
         return ViewHolder(binding)
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position), listener)
+
     class ViewHolder (private var binding: RvMatchInfoBinding): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: PreviousMatchLocal, id: String, listener: ClickListener) {
+        fun bind(item: PreviousMatchLocal, listener: ClickListener) {
             binding.apply {
-                if (item.idEvent == id) {
-                    binding.imageView.setImageResource(R.drawable.ic_favorite)
-                }else {
-                    binding.imageView.setImageResource(R.drawable.ic_not_favorite)
-                }
+
                 list = item
 
                 binding.imageView.setOnClickListener {

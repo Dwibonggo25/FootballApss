@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballapps.R
 import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentMatchInfoBinding
+import com.example.footballapps.db.entity.Favorites
 import com.example.footballapps.db.entity.PreviousMatchLocal
 import com.example.footballapps.vo.Result
 
@@ -25,16 +27,13 @@ class MatchInfoFragment : BaseFragment<FragmentMatchInfoBinding, MatchInfoViewmo
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        vm.favorites.observe(this, Observer { data ->
-
-        })
         initRecyclerView()
         getPreviousMatch()
     }
 
     private fun initRecyclerView() {
         val itemDecor = DividerItemDecoration(context, HORIZONTAL)
-        adapter = PreviousMatchAdapter("602258", this)
+        adapter = PreviousMatchAdapter(this)
         val layoutmanager = LinearLayoutManager(context)
         binding.rvPreviousMatch.layoutManager = layoutmanager
         binding.rvPreviousMatch.adapter = adapter
@@ -56,5 +55,6 @@ class MatchInfoFragment : BaseFragment<FragmentMatchInfoBinding, MatchInfoViewmo
 
     override fun isFavoriteSelected(item: PreviousMatchLocal) {
         vm.insertInFavorites(item)
+        initRecyclerView()
     }
 }

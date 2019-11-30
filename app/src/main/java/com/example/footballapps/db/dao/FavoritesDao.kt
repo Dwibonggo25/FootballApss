@@ -6,6 +6,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.footballapps.db.entity.Favorites
+import com.example.footballapps.db.entity.PreviousMatchLocal
+import com.example.footballapps.vo.Result
 import io.reactivex.Observable
 
 @Dao
@@ -15,5 +17,5 @@ interface FavoritesDao {
     suspend fun insertInfavorites (data: Favorites)
 
     @Query ("SELECT * FROM favorites")
-    suspend fun selectAllFavorites (): LiveData <List<Favorites>>
+    fun selectAllFavorites (): LiveData<List<Favorites>>
 }

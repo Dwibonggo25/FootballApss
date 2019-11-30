@@ -1,5 +1,6 @@
 package com.example.footballapps.di.module
 
+import com.example.footballapps.ui.allmatch.AllMatchFragment
 import com.example.footballapps.ui.home.HomeFragment
 import com.example.footballapps.ui.login.LoginFragment
 import com.example.footballapps.ui.matchinfo.MatchInfoFragment
@@ -29,4 +30,7 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesScoresFragment(): ScoresFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesAllMatchFragment(): AllMatchFragment
 }

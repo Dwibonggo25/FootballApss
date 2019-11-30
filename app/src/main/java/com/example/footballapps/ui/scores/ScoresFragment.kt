@@ -17,6 +17,7 @@ import com.example.footballapps.R
 import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentScoresBinding
 import com.example.footballapps.db.entity.AllSportsLocal
+import com.example.footballapps.ui.allmatch.AllMatchFragment
 import com.example.footballapps.ui.matchinfo.MatchInfoFragment
 import com.example.footballapps.ui.nextmatch.NextMatchFragment
 import com.example.footballapps.vo.Result
@@ -73,7 +74,7 @@ class ScoresFragment : BaseFragment<FragmentScoresBinding, ScoresViewmodel>() {
         val adapter = ViewpagerAdapter(childFragmentManager)
         adapter.addFragment(MatchInfoFragment(), "Match")
         adapter.addFragment(NextMatchFragment(), "Next Match")
-        adapter.addFragment(NextMatchFragment(), "All Info Match")
+        adapter.addFragment(AllMatchFragment(), "All Info Match")
         binding.vpInfoMatch.adapter = adapter
     }
 

@@ -16,5 +16,4 @@ interface PreviousMatchDao {
 
     @Query ("SELECT * FROM previous_match")
     fun selectAllPreviousMatch() : LiveData<List<PreviousMatchLocal>>
-
 }

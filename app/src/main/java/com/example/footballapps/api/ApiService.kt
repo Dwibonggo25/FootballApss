@@ -13,7 +13,7 @@ interface ApiService {
     suspend fun fetchAllSports(): Response<AllSportResponse>
 
     @GET ("eventsnextleague.php")
-    suspend fun fetchNextEventLeague (@Query("id") id: String) : NextMatchResponse
+    suspend fun fetchNextEventLeague (@Query("id") id: String) : Response<NextMatchResponse>
 
     @GET ("eventspastleague.php")
     suspend fun fetchPreviousMatch (@Query("id") id: String) : Response<PreviousMatchResponse>
