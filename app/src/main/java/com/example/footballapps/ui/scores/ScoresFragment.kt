@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.Observer
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.footballapps.R
 import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentScoresBinding
@@ -21,8 +22,10 @@ import com.example.footballapps.ui.allmatch.AllMatchFragment
 import com.example.footballapps.ui.matchinfo.MatchInfoFragment
 import com.example.footballapps.ui.nextmatch.NextMatchFragment
 import com.example.footballapps.vo.Result
+import com.google.android.material.tabs.TabLayoutMediator
 
 class ScoresFragment : BaseFragment<FragmentScoresBinding, ScoresViewmodel>() {
+
 
     private lateinit var spinnerAdapter: CustomAllLeagueSpinnerAdapter
 
@@ -35,8 +38,8 @@ class ScoresFragment : BaseFragment<FragmentScoresBinding, ScoresViewmodel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        settingTabLayout()
         settingViewpager()
+        settingTabLayout()
 
         spinner = binding.spinner
 
@@ -67,31 +70,41 @@ class ScoresFragment : BaseFragment<FragmentScoresBinding, ScoresViewmodel>() {
     }
 
     private fun settingTabLayout() {
-        binding.tlInfoMatch.setupWithViewPager(binding.vpInfoMatch)
+        TabLayoutMediator(binding.tlInfoMatch, binding.vpInfoMatch) { tab, position ->
+            when(position){
+                0 -> {
+                    tab.setText("Match info")
+                }
+                1 -> {
+                    tab.setText("Next Match")
+                }
+                else -> {
+                    tab.setText("All Match")
+                }
+            }
+        }.attach()
     }
 
     private fun settingViewpager() {
-        val adapter = ViewpagerAdapter(childFragmentManager)
-        adapter.addFragment(MatchInfoFragment(), "Match")
-        adapter.addFragment(NextMatchFragment(), "Next Match")
-        adapter.addFragment(AllMatchFragment(), "All Info Match")
+        val adapter = ViewpagerAdapter(this)
         binding.vpInfoMatch.adapter = adapter
     }
 
-    class ViewpagerAdapter constructor(val fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+    class ViewpagerAdapter (fragmentManager: Fragment) : FragmentStateAdapter(fragmentManager) {
+        override fun getItemCount(): Int = 3
 
-        val fragmentList = mutableListOf<Fragment>()
-        val fragmentTitle = mutableListOf<String>()
-
-        override fun getItem(position: Int): Fragment = fragmentList[position]
-        override fun getCount(): Int = fragmentList.size
-        override fun getPageTitle(position: Int) = fragmentTitle[position]
-
-        fun addFragment(fragment: Fragment, title: String) {
-            fragmentList.add(fragment)
-            fragmentTitle.add(title)
+        override fun createFragment(position: Int): Fragment {
+            return when (position) {
+                0 ->{
+                    MatchInfoFragment.newInstance()
+                }
+                1 ->{
+                    NextMatchFragment.newInstance()
+                }else -> {
+                    AllMatchFragment.newInstance()
+                }
+            }
         }
-
     }
 
 }

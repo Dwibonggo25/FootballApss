@@ -1,5 +1,8 @@
 package com.example.footballapps.ui.home
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -38,7 +41,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         initRecyclerView()
         getDataAllSport()
         insertLeagues()
-//        createNotificationChannel()
+        createNotificationChannel()
     }
 
     private fun getDataAllSport() {
@@ -60,19 +63,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         })
     }
 
-//    private fun createNotificationChannel () {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            val name = "Bacot"
-//            val description = "Test"
-//            val importance = NotificationManager.IMPORTANCE_DEFAULT
-//            val channel = NotificationChannel(CHANNEL_ID, name, importance)
-//            channel.description = description
-//            // Register the channel with the system; you can't change the importance
-//            // or other notification behaviors after this
-//            val notificationManager = requireActivity().getSystemService(NotificationManager::class.java)
-//            notificationManager!!.createNotificationChannel(channel)
-//        }
-//    }
+    private fun createNotificationChannel () {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "Bacot"
+            val description = "Test"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, name, importance)
+            channel.description = description
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            val notificationManager = requireActivity().getSystemService(NotificationManager::class.java)
+            notificationManager!!.createNotificationChannel(channel)
+        }
+    }
 
     private fun insertLeagues() {
         context!!.assets.open(LEAGUES_DATA_FILENAME).use {

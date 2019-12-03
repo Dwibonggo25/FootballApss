@@ -6,3 +6,5 @@ const val DEFAULT_READ_TIMEOUT: Long = 30000
 const val DEFAULT_WRITE_TIMEOUT: Long = 30000
 
 const val LEAGUES_DATA_FILENAME = "leagues.json"
+
+const val ARG_OBJECT = "object"

@@ -24,6 +24,10 @@ class MatchInfoFragment : BaseFragment<FragmentMatchInfoBinding, MatchInfoViewmo
 
     lateinit var adapter: PreviousMatchAdapter
 
+    companion object {
+        fun newInstance() = MatchInfoFragment()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

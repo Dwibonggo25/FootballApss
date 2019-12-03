@@ -21,6 +21,9 @@ class NextMatchFragment : BaseFragment<FragmentNextMatchBinding, NextMatchViewmo
 
     lateinit var adapter : NextMatchAdapter
 
+    companion object {
+        fun newInstance() = NextMatchFragment()
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)

@@ -16,6 +16,10 @@ class AllMatchFragment : BaseFragment<FragmentAllMatchBinding, AllMatchViewmodel
 
     private lateinit var adapter: AllMatchRecyclerAdapter
 
+    companion object {
+        fun newInstance() = AllMatchFragment()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -19,5 +19,4 @@ class MatchInfoViewmodel @Inject constructor(private var api: ScoresRepository):
 
     val favorites : LiveData<List<Favorites>> = api.fetchDataFavorites()
 
-
 }
