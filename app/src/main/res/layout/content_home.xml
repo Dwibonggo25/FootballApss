@@ -5,9 +5,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/white">
-
 
         <ImageButton
                 android:id="@+id/btnFootball"
@@ -15,9 +14,9 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/ic_premier_league"
                 android:gravity="center"
                 android:padding="8dp"
-                android:background="@drawable/ic_premier_league"
                 app:layout_constraintEnd_toStartOf="@+id/btnBasket"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -28,9 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:text="Football"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btnFootball"
                 app:layout_constraintStart_toStartOf="@+id/btnFootball"
                 app:layout_constraintTop_toBottomOf="@+id/btnFootball" />
@@ -40,9 +37,9 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/ic_premier_league"
                 android:gravity="center"
                 android:padding="8dp"
-                android:background="@drawable/ic_premier_league"
                 app:layout_constraintEnd_toStartOf="@+id/btnSnooker"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnBasket"
@@ -55,9 +52,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_premier_league"
                 android:gravity="center"
                 android:padding="8dp"
-                android:background="@drawable/ic_premier_league"
                 app:layout_constraintEnd_toStartOf="@+id/btnVolley"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnFootball"
@@ -70,9 +67,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_premier_league"
                 android:gravity="center"
                 android:padding="8dp"
-                android:background="@drawable/ic_premier_league"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/btnVolley"
@@ -114,6 +111,17 @@
                 app:layout_constraintEnd_toEndOf="@+id/btnSnooker"
                 app:layout_constraintStart_toStartOf="@+id/btnSnooker"
                 app:layout_constraintTop_toBottomOf="@+id/btnSnooker" />
+
+        <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/btnFootball"
+                app:layout_constraintStart_toStartOf="@+id/btnFootball"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                app:srcCompat="@drawable/ic_spanish" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

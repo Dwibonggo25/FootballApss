@@ -65,7 +65,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
 
     private fun createNotificationChannel () {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val name = "Bacot"
+            val name = "Test"
             val description = "Test"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(CHANNEL_ID, name, importance)

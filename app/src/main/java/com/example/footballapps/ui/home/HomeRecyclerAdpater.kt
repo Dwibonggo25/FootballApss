@@ -26,16 +26,11 @@ class HomeRecyclerAdpater (var league : List<AllSportsLocal> , val context: Cont
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = LayoutInflater.from(context).inflate(R.layout.rv_item_all_league, container, false)
-        val tvName = view.findViewById<TextView>(R.id.tvTitleSports)
         val imageView = view.findViewById<ImageView>(R.id.ivSports)
-        val title = league[position].strSport
 
         Glide.with(context)
             .load(league[position].strSportThumb)
             .into(imageView)
-
-        tvName.text = title
-
 
         container.addView(view, 0)
         return view
