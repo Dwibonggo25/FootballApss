@@ -34,7 +34,11 @@
             android:id="@+id/scoresFragment"
             android:name="com.example.footballapps.ui.scores.ScoresFragment"
             android:label="fragment_scores"
-            tools:layout="@layout/fragment_scores" />
+            tools:layout="@layout/fragment_scores" >
+        <action
+                android:id="@+id/actionDetailMatchLaunch"
+                app:destination="@id/detailMatchFragment" />
+    </fragment>
     <fragment
             android:id="@+id/allMatchFragment"
             android:name="com.example.footballapps.ui.allmatch.AllMatchFragment"
@@ -45,4 +49,14 @@
             android:name="com.example.footballapps.ui.favorite.FavoriteFragment"
             android:label="fragment_favorite"
             tools:layout="@layout/fragment_favorite" />
+    <fragment
+            android:id="@+id/detailMatchFragment"
+            android:name="com.example.footballapps.ui.detailmatch.DetailMatchFragment"
+            android:label="fragment_detail_match"
+            tools:layout="@layout/fragment_detail_match" >
+        <argument
+                android:name="idEvents"
+                app:argType="string"
+                android:defaultValue="null" />
+    </fragment>
 </navigation>

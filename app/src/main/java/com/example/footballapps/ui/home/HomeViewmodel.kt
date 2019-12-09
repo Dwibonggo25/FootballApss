@@ -1,5 +1,6 @@
 package com.example.footballapps.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.footballapps.db.entity.Leagues
@@ -14,4 +15,5 @@ class HomeViewmodel @Inject constructor(private val repository: HomeRepository) 
     fun insertLeague(data: List <Leagues>) = viewModelScope.launch{
         repository.insertLeagues(data)
     }
+
 }

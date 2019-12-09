@@ -1,6 +1,7 @@
 package com.example.footballapps.di.module
 
 import com.example.footballapps.ui.allmatch.AllMatchFragment
+import com.example.footballapps.ui.detailmatch.DetailMatchFragment
 import com.example.footballapps.ui.favorite.FavoriteFragment
 import com.example.footballapps.ui.home.HomeFragment
 import com.example.footballapps.ui.login.LoginFragment
@@ -37,4 +38,7 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributesFavoriteFragment(): FavoriteFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributesDetailMatchFragment(): DetailMatchFragment
 }

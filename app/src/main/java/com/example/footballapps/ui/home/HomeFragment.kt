@@ -4,7 +4,11 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
@@ -42,6 +46,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         getDataAllSport()
         insertLeagues()
         createNotificationChannel()
+        setHasOptionsMenu(true)
     }
 
     private fun getDataAllSport() {
@@ -77,6 +82,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.home_menu, menu)
+        val searchItem: MenuItem = menu.findItem(R.id.searchMenu)
+        val search : SearchView = searchItem.actionView as SearchView
+        searchQuery(search)
+    }
+
+    private fun searchQuery(search: SearchView) {
+        search.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(p0: String?): Boolean {
+                return true
+            }
+
+        })
+    }
+
     private fun insertLeagues() {
         context!!.assets.open(LEAGUES_DATA_FILENAME).use {
             JsonReader (it.reader()).use { jsonReader ->
@@ -92,6 +121,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewmodel>() {
         viewPager = binding.viewPagerBanner
         adapter = HomeRecyclerAdpater(ArrayList(), activity!!)
         viewPager.adapter = adapter
-        binding.tabLayout.setupWithViewPager(viewPager, true)
+        //binding.tabLayout.setupWithViewPager(viewPager, true)
     }
 }

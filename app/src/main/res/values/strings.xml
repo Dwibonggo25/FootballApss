@@ -14,7 +14,4 @@
     <string name="search">Search</string>
     <string name="home">Home</string>
 
-    <string-array name="list_team">
-        <item>Nama</item>
-    </string-array>
 </resources>

@@ -32,6 +32,9 @@ class PreviousMatchAdapter (val listener: ClickListener): ListAdapter<PreviousMa
                     listener.isFavoriteSelected(item)
                 }
 
+                binding.clMatchInfo.setOnClickListener {
+                    listener.isMatchClicked(item.idEvent)
+                }
                 binding.executePendingBindings()
             }
         }
@@ -39,6 +42,7 @@ class PreviousMatchAdapter (val listener: ClickListener): ListAdapter<PreviousMa
 
     interface ClickListener {
         fun isFavoriteSelected (item: PreviousMatchLocal)
+        fun isMatchClicked(id: String)
     }
     companion object {
         val DiffCallback = object : DiffUtil.ItemCallback<PreviousMatchLocal>() {

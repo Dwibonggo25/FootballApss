@@ -6,6 +6,7 @@ import com.example.footballapps.ui.login.LoginViewModel
 import com.example.footballapps.di.ViewModelFactory
 import com.example.footballapps.di.ViewModelKey
 import com.example.footballapps.ui.allmatch.AllMatchViewmodel
+import com.example.footballapps.ui.detailmatch.DetailMatchViewmodel
 import com.example.footballapps.ui.favorite.FavoriteViewmodel
 import com.example.footballapps.ui.home.HomeViewmodel
 import com.example.footballapps.ui.matchinfo.MatchInfoViewmodel
@@ -61,4 +62,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(FavoriteViewmodel::class)
     internal abstract fun providesFavoriteViewmodel(viewModel : FavoriteViewmodel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailMatchViewmodel::class)
+    internal abstract fun providesDetailMatchViewmodel(viewModel : DetailMatchViewmodel) : ViewModel
 }

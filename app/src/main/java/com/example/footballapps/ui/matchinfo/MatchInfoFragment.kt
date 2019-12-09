@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.footballapps.R
@@ -13,6 +14,7 @@ import com.example.footballapps.base.BaseFragment
 import com.example.footballapps.databinding.FragmentMatchInfoBinding
 import com.example.footballapps.db.entity.Favorites
 import com.example.footballapps.db.entity.PreviousMatchLocal
+import com.example.footballapps.ui.scores.ScoresFragmentDirections
 import com.example.footballapps.vo.Result
 
 
@@ -60,5 +62,11 @@ class MatchInfoFragment : BaseFragment<FragmentMatchInfoBinding, MatchInfoViewmo
     override fun isFavoriteSelected(item: PreviousMatchLocal) {
         vm.insertInFavorites(item)
         initRecyclerView()
+    }
+
+    override fun isMatchClicked(id: String) {
+        val action = ScoresFragmentDirections.actionDetailMatchLaunch()
+        action.setIdEvents(id)
+        findNavController().navigate(action)
     }
 }
