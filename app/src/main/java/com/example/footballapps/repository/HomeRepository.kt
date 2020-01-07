@@ -33,6 +33,5 @@ class HomeRepository @Inject constructor(private val allStartsDao: AllSportsDao,
             }
         }.asLivedata()
     }
-
     suspend fun insertLeagues(data: List<Leagues>) = leaguesDao.insertLeagues(data)
 }

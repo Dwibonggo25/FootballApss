@@ -59,4 +59,9 @@
                 app:argType="string"
                 android:defaultValue="null" />
     </fragment>
+    <fragment
+            android:id="@+id/listSportsFragment"
+            android:name="com.example.footballapps.ui.listsports.ListSportsFragment"
+            android:label="fragment_list_sports"
+            tools:layout="@layout/fragment_list_sports" />
 </navigation>

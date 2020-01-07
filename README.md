@@ -6,3 +6,4 @@
 6. Ktlint
 7. Migrating database
 8. Room database
+9. Viewpager2

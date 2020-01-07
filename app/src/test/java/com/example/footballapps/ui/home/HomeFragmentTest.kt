@@ -6,8 +6,6 @@ import org.junit.Assert.*
 
 class HomeFragmentTest {
 
-
-
     @Test
     fun getLayoutResourceId() {
     }

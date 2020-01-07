@@ -26,7 +26,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class ScoresFragment : BaseFragment<FragmentScoresBinding, ScoresViewmodel>() {
 
-
     private lateinit var spinnerAdapter: CustomAllLeagueSpinnerAdapter
 
     private lateinit var spinner: Spinner
